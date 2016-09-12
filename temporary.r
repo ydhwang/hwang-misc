@@ -2,8 +2,7 @@ n.unique <- function(x){
 	length(unique(x))
 }
 
-pick.day <-
-function(x,y,z){
+pick.day <- function(x,y,z){
 	# this is to pick the closest data points to the target value of y
 	# and then it gives the value of z corresponding to the picked data points
 	# this is (sort of) useful to align multiple time series 
