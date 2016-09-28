@@ -11,3 +11,8 @@ pick.day <- function(x,y,z){
 	if (min(abs(x-y))>=5){out <- NA} # if too far from the target date, we mark it as NA
 	return(out)
 }
+
+catn <- function(x) { 
+# convenient function for cleaner screen print
+	cat(x, "\n")
+	}
