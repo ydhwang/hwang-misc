@@ -3,7 +3,7 @@ Type: Package
 Title: What the package does (short line)
 Version: 1.0
 Date: 2017-06-27
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: YD HWANG
+Maintainer: YD HWANG <yhwang@us.ibm.com>
+Description: THis is personal collection of R functions that YD has used over time.
+License: MIT + file LICENSE
