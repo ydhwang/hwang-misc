@@ -1,22 +1,22 @@
-\name{rmse}
-\alias{rmse}
+\name{lsos}
+\alias{lsos}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-calculating RMSE
+%%  ~~function to do ... ~~
 }
 \description{
-a function to calculate the RMSE
+%%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-rmse(x, y)
+lsos(..., n = 10)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-yhat (prediction or forecast)
+  \item{\dots}{
+%%     ~~Describe \code{\dots} here~~
 }
-  \item{y}{
-y. 
+  \item{n}{
+%%     ~~Describe \code{n} here~~
 }
 }
 \details{
@@ -50,15 +50,13 @@ y.
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (x, y) 
+function (..., n = 10) 
 {
-    if (any(dim(x) != dim(y))) {
-        stop()
-    }
-    sqrt(mean((x - y)^2))
+    .ls.objects(..., order.by = "Size", decreasing = TRUE, head = TRUE, 
+        n = n)
   }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-
- 
+\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

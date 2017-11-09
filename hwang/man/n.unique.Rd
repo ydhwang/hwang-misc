@@ -1,18 +1,19 @@
-\name{catn}
-\alias{catn}
+\name{n.unique}
+\alias{n.unique}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{ Concatenate and Print function with line break added
+\title{
+%%  ~~function to do ... ~~
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-catn(x)
+n.unique(x)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-Concatenate, print and add a line break
+%%     ~~Describe \code{x} here~~
 }
 }
 \details{
@@ -29,10 +30,10 @@ Concatenate, print and add a line break
 %% ~put references to the literature/web site here ~
 }
 \author{
-YD Hwang
+%%  ~~who you are~~
 }
 \note{
-simple function
+%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
@@ -48,10 +49,10 @@ simple function
 ## The function is currently defined as
 function (x) 
 {
-    cat(x, "\n")
+    length(unique(x))
   }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{catn}% use one of  RShowDoc("KEYWORDS")
-\keyword{print}% __ONLY ONE__ keyword per line
+\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

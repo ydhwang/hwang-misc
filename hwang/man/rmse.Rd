@@ -1,28 +1,22 @@
-\name{pick.day}
-\alias{pick.day}
+\name{rmse}
+\alias{rmse}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-pick.day
+%%  ~~function to do ... ~~
 }
 \description{
-this is to pick the closest data points to the target value of y
-and then it gives the value of z corresponding to the picked data points
-this is (sort of) useful to align multiple time series 
-grid is made over y. (arbitrary) threshold 5 is used. in the future, threshold should be one of the argument
+%%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-pick.day(x, y, z)
+rmse(x, y)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-(time) index
+%%     ~~Describe \code{x} here~~
 }
   \item{y}{
-reference (time) index
-}
-  \item{z}{
-target values
+%%     ~~Describe \code{y} here~~
 }
 }
 \details{
@@ -56,15 +50,15 @@ target values
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (x, y, z) 
+function (x, y) 
 {
-    out <- z[min(which.min(abs(x - y)))]
-    if (min(abs(x - y)) >= 5) {
-        out <- NA
+    if (any(dim(x) != dim(y))) {
+        stop()
     }
-    return(out)
+    sqrt(mean((x - y)^2))
   }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-
+\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

@@ -1,19 +1,19 @@
-\name{n.unique}
-\alias{n.unique}
+\name{catn}
+\alias{catn}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-n.unique
+%%  ~~function to do ... ~~
 }
 \description{
-shows the number of unique elements
+%%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-n.unique(x)
+catn(x)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-number of unique items
+%%     ~~Describe \code{x} here~~
 }
 }
 \details{
@@ -30,7 +30,7 @@ number of unique items
 %% ~put references to the literature/web site here ~
 }
 \author{
-YD Hwang
+%%  ~~who you are~~
 }
 \note{
 %%  ~~further notes~~
@@ -49,9 +49,10 @@ YD Hwang
 ## The function is currently defined as
 function (x) 
 {
-    length(unique(x))
+    cat(x, "\n")
   }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
- 
+\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

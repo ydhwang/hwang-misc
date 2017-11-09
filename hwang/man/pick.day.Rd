@@ -1,22 +1,25 @@
-\name{lsos}
-\alias{lsos}
+\name{pick.day}
+\alias{pick.day}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-list all the items in the working space sorted by the object size
+%%  ~~function to do ... ~~
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-lsos(..., n = 10)
+pick.day(x, y, z)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+  \item{x}{
+%%     ~~Describe \code{x} here~~
 }
-  \item{n}{
-number of items listed
+  \item{y}{
+%%     ~~Describe \code{y} here~~
+}
+  \item{z}{
+%%     ~~Describe \code{z} here~~
 }
 }
 \details{
@@ -30,10 +33,10 @@ number of items listed
 %% ...
 }
 \references{
-http://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session
+%% ~put references to the literature/web site here ~
 }
 \author{
-YD Hwang
+%%  ~~who you are~~
 }
 \note{
 %%  ~~further notes~~
@@ -50,12 +53,16 @@ YD Hwang
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (..., n = 10) 
+function (x, y, z) 
 {
-    .ls.objects(..., order.by = "Size", decreasing = TRUE, head = TRUE, 
-        n = n)
+    out <- z[min(which.min(abs(x - y)))]
+    if (min(abs(x - y)) >= 5) {
+        out <- NA
+    }
+    return(out)
   }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-
+\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
