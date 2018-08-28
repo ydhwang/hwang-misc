@@ -2,8 +2,12 @@ rmse <- function(x,y){
 	# root mean square error function
 	# x, y can be vector, matrix or array but their sizes should match
 	# returns a scalar 
-	if (any(dim(x)!=dim(y))){stop()} # check function to prevent disastrous cases
+	if (any(dim(x)!=dim(y))|| length(x)!=length(y)){
+	# check function to prevent disastrous cases
+	stop("two objects' sizes differ \n")
+	}else{	 
 	sqrt(mean((x-y)^2))
+	}
 }
 
 pick_day <- function(x,y,z, threshold=5){
@@ -16,16 +20,23 @@ pick_day <- function(x,y,z, threshold=5){
 	return(out)
 }
 
-n_unique <- function(x){
+n_unique <- function(x){ 
+	# equivalent of dplyr::n_distinct, but n_distinct says it's faster than this
+	# probably this function should be deprecated
 	length(unique(x))
 }
 
 catn <- function(x) { 
-	# convenient function for cleaner screen print
+	# convenient function for screen printing
+	# useful when running simulation
 	cat(x, "\n")
 	}
 
 check_objects  <- function(pos = 1, pattern, order.by="Size", decreasing=TRUE, head=FALSE, n=10){
+    if (!missing(order.by)) 
+    	out <- out[order(out[[order.by]], decreasing=decreasing), ]
+    if (head)
+        out <- head(out, n)
     napply <- function(names, fn) sapply(names, function(x) fn(get(x, pos = pos)))
     names <- ls(pos = pos, pattern = pattern)
     obj.class <- napply(names, function(x) as.character(class(x))[1])
@@ -38,9 +49,6 @@ check_objects  <- function(pos = 1, pattern, order.by="Size", decreasing=TRUE, h
     obj.dim[vec, 1] <- napply(names, length)[vec]
     out <- data.frame(obj.type, obj.size, obj.dim)
     names(out) <- c("Type", "Size", "Rows", "Columns")
-    if (!missing(order.by))
-        out <- out[order(out[[order.by]], decreasing=decreasing), ]
-    if (head)
-        out <- head(out, n)
+
     out
 }
